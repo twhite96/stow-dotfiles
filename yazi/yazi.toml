@@ -1,0 +1,59 @@
+[manager]
+ratio = [1, 4, 3]
+show_hidden = true
+show_symlink = true
+sort_reverse = false
+sort_dir_first = true
+scrolloff = 5
+sort_by = "alphabetical"
+linemode = "size_and_mtime"
+mouse_events = ["click", "scroll", "move", "drag"]
+title_format = "Yazi: {cwd}"
+
+[preview]
+wrap = "no"
+tab_size = 2
+max_width = 800
+image_filter = "catmull-rom"
+image_quality = 75
+image_delay = 30
+
+
+[opener]
+play = [{ run = '"$@"', orphan = true, for = "unix" }]
+edit = [{ run = 'nvim %* "$@"', block = true, for = "unix" }]
+open = [
+  { run = 'xdg-open "$1"', desc = "Open", for = "linux" },
+  { run = 'open "$@"', desc = "Open", for = "macos" },
+]
+
+[open]
+prepend_rules = [
+  { name = "*.md", use = [
+    "open",
+    "edit",
+  ] },
+  { name = "*.go", use = [
+    "open",
+    "edit",
+  ] },
+  { name = "*.astro", use = "edit" },
+  { name = "*.rs", use = "edit" },
+  { name = "*.zig", use = "edit" },
+  { name = "*.py", use = "edit" },
+  { name = "*.rb", use = "edit" },
+  { name = "*.c", use = "edit" },
+  { name = "*.cpp", use = "edit" },
+  { name = "*.njk", use = [
+    "open",
+    "edit",
+  ] },
+  { name = "*.html", use = [
+    "open",
+    "edit",
+  ] },
+  { name = "*.js", use = "edit" },
+  { name = "*.ts", use = "edit" },
+  { name = "*jsx", use = "edit" },
+  { name = "*.tsx", use = "edit" },
+]
