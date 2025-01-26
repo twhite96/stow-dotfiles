@@ -6,6 +6,7 @@
 # fi
 
 ZSH=$HOME/.oh-my-zsh
+source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -453,7 +454,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 source /Users/tiffanywhite/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 BROWSER="Vivaldi.app"; export BROWSER
-EDITOR=neovim; export EDITOR
+EDITOR=nvim; export EDITOR
 VISUAL=wezterm; export VISUAL
 
 eval "$(hub alias -s)"
@@ -532,6 +533,11 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+##############
+# Yazi Config #
+##############
+
 
 #eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/catppuccin_frappe.omp.json)"
 
